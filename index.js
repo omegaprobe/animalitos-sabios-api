@@ -10,10 +10,16 @@ var app = express();
 app.use(bodyparser.json());
 
 // Abriendo a la escucha de peticiones el puerto 80 de la app...
-const PORT = 80
+const PORT = 3000
 app.listen(PORT, () => console.log("Escuchando peticiones en https://localhost:"+PORT+"/"));
 
 // FUNCIONES GET:
+// Obtener datos de michito:
+app.get("/hola", async(request, response) =>
+{
+    response.send("Hola");
+});
+
 // Obtener datos de michito:
 app.get("/michi", async(request, response) =>
 {
